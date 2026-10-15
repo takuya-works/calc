@@ -2,10 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>関数電卓</title>
   <!-- PWA（ホーム画面追加・オフライン動作）用の設定 -->
-  <meta name="theme-color" content="#0c0a09">
+  <meta name="theme-color" content="#14161a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -20,6 +20,10 @@
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
+      padding-top: max(env(safe-area-inset-top), 8px);
+      padding-bottom: max(env(safe-area-inset-bottom), 12px);
+      padding-left: max(env(safe-area-inset-left), 8px);
+      padding-right: max(env(safe-area-inset-right), 8px);
     }
 
     .font-lcd {
@@ -135,30 +139,15 @@
     }
   </style>
   <!-- Tailwind CSS（ビルド済み・オフライン用） -->
-  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.z-50{z-index:50}.col-span-1{grid-column:span 1/span 1}.col-span-2{grid-column:span 2/span 2}.col-span-3{grid-column:span 3/span 3}.col-span-4{grid-column:span 4/span 4}.col-span-6{grid-column:span 6/span 6}.-mx-1\.5{margin-left:-.375rem;margin-right:-.375rem}.mx-0\.5{margin-left:.125rem;margin-right:.125rem}.-mt-1\.5{margin-top:-.375rem}.mb-0\.5{margin-bottom:.125rem}.mb-1{margin-bottom:.25rem}.mb-1\.5{margin-bottom:.375rem}.mb-2{margin-bottom:.5rem}.mb-2\.5{margin-bottom:.625rem}.mb-3{margin-bottom:.75rem}.ml-auto{margin-left:auto}.mt-0\.5{margin-top:.125rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.hidden{display:none}.h-2\.5{height:.625rem}.h-3{height:.75rem}.h-32{height:8rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.max-h-\[88vh\]{max-height:88vh}.min-h-\[34px\]{min-height:34px}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-16{width:4rem}.w-36{width:9rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-\[130px\]{max-width:130px}.max-w-\[430px\]{max-width:430px}.flex-1{flex:1 1 0%}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;-moz-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.overflow-y-hidden{overflow-y:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-normal{white-space:normal}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-\[36px\]{border-radius:36px}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.rounded-b-xl{border-bottom-right-radius:.75rem;border-bottom-left-radius:.75rem}.rounded-l-full{border-top-left-radius:9999px;border-bottom-left-radius:9999px}.rounded-r-full{border-top-right-radius:9999px;border-bottom-right-radius:9999px}.rounded-t-\[28px\]{border-top-left-radius:28px;border-top-right-radius:28px}.rounded-t-xl{border-top-left-radius:.75rem;border-top-right-radius:.75rem}.border{border-width:1px}.border-\[3px\]{border-width:3px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-\[\#e2e8f0\]\/80{border-color:rgba(226,232,240,.8)}.border-stone-700{--tw-border-opacity:1;border-color:rgb(68 64 60/var(--tw-border-opacity,1))}.border-stone-900{--tw-border-opacity:1;border-color:rgb(28 25 23/var(--tw-border-opacity,1))}.border-stone-900\/10{border-color:rgba(28,25,23,.1)}.border-stone-900\/20{border-color:rgba(28,25,23,.2)}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.bg-\[\#14161a\]{--tw-bg-opacity:1;background-color:rgb(20 22 26/var(--tw-bg-opacity,1))}.bg-\[\#1e2026\]{--tw-bg-opacity:1;background-color:rgb(30 32 38/var(--tw-bg-opacity,1))}.bg-\[\#2c1d18\]{--tw-bg-opacity:1;background-color:rgb(44 29 24/var(--tw-bg-opacity,1))}.bg-\[\#2e1e19\]{--tw-bg-opacity:1;background-color:rgb(46 30 25/var(--tw-bg-opacity,1))}.bg-\[\#31201b\]{--tw-bg-opacity:1;background-color:rgb(49 32 27/var(--tw-bg-opacity,1))}.bg-\[\#32211c\]{--tw-bg-opacity:1;background-color:rgb(50 33 28/var(--tw-bg-opacity,1))}.bg-\[\#8fa885\]{--tw-bg-opacity:1;background-color:rgb(143 168 133/var(--tw-bg-opacity,1))}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.bg-black\/80{background-color:rgba(0,0,0,.8)}.bg-stone-800\/70{background-color:rgba(41,37,36,.7)}.bg-stone-900{--tw-bg-opacity:1;background-color:rgb(28 25 23/var(--tw-bg-opacity,1))}.bg-stone-900\/10{background-color:rgba(28,25,23,.1)}.bg-stone-900\/15{background-color:rgba(28,25,23,.15)}.bg-stone-950{--tw-bg-opacity:1;background-color:rgb(12 10 9/var(--tw-bg-opacity,1))}.p-0\.5{padding:.125rem}.p-1\.5{padding:.375rem}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-3\.5{padding:.875rem}.p-4{padding:1rem}.px-0\.5{padding-left:.125rem;padding-right:.125rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.pb-0\.5{padding-bottom:.125rem}.pb-3{padding-bottom:.75rem}.pr-1{padding-right:.25rem}.pt-0\.5{padding-top:.125rem}.pt-1\.5{padding-top:.375rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.align-middle{vertical-align:middle}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.text-\[10\.5px\]{font-size:10.5px}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[6\.5px\]{font-size:6.5px}.text-\[7\.5px\]{font-size:7.5px}.text-\[7px\]{font-size:7px}.text-\[8\.5px\]{font-size:8.5px}.text-\[8px\]{font-size:8px}.text-\[9\.5px\]{font-size:9.5px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tighter{letter-spacing:-.05em}.tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}.tracking-widest{letter-spacing:.1em}.text-\[\#9ab38f\]{--tw-text-opacity:1;color:rgb(154 179 143/var(--tw-text-opacity,1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77/var(--tw-text-opacity,1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.text-amber-400\/90{color:rgba(251,191,36,.9)}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15/var(--tw-text-opacity,1))}.text-stone-100{--tw-text-opacity:1;color:rgb(245 245 244/var(--tw-text-opacity,1))}.text-stone-200{--tw-text-opacity:1;color:rgb(231 229 228/var(--tw-text-opacity,1))}.text-stone-300{--tw-text-opacity:1;color:rgb(214 211 209/var(--tw-text-opacity,1))}.text-stone-400{--tw-text-opacity:1;color:rgb(168 162 158/var(--tw-text-opacity,1))}.text-stone-800{--tw-text-opacity:1;color:rgb(41 37 36/var(--tw-text-opacity,1))}.text-stone-900{--tw-text-opacity:1;color:rgb(28 25 23/var(--tw-text-opacity,1))}.text-stone-950{--tw-text-opacity:1;color:rgb(12 10 9/var(--tw-text-opacity,1))}.text-teal-300{--tw-text-opacity:1;color:rgb(94 234 212/var(--tw-text-opacity,1))}.text-transparent{color:transparent}.opacity-100{opacity:1}.opacity-15{opacity:.15}.opacity-60{opacity:.6}.opacity-75{opacity:.75}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-\[0_20px_60px_rgba\(0\2c 0\2c 0\2c 0\.85\)\]{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-\[0_20px_60px_rgba\(0\2c 0\2c 0\2c 0\.85\)\]{--tw-shadow:0 20px 60px rgba(0,0,0,.85);--tw-shadow-colored:0 20px 60px var(--tw-shadow-color)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgba(0,0,0,.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.ring-4{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.ring-\[\#111317\]{--tw-ring-opacity:1;--tw-ring-color:rgb(17 19 23/var(--tw-ring-opacity,1))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.selection\:bg-amber-500 ::-moz-selection{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.selection\:bg-amber-500 ::selection{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.selection\:text-black ::-moz-selection{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.selection\:text-black ::selection{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.selection\:bg-amber-500::-moz-selection{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.selection\:bg-amber-500::selection{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.selection\:text-black::-moz-selection{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.selection\:text-black::selection{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.hover\:bg-amber-500:hover{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.hover\:text-amber-400:hover{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.hover\:text-rose-400:hover{--tw-text-opacity:1;color:rgb(251 113 133/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:opacity-100:hover{opacity:1}@media (min-width:640px){.sm\:h-36{height:9rem}.sm\:w-40{width:10rem}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:gap-1\.5{gap:.375rem}.sm\:gap-2{gap:.5rem}.sm\:p-4{padding:1rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:text-\[10px\]{font-size:10px}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style>
+  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.z-50{z-index:50}.col-span-1{grid-column:span 1/span 1}.col-span-2{grid-column:span 2/span 2}.col-span-3{grid-column:span 3/span 3}.col-span-4{grid-column:span 4/span 4}.col-span-6{grid-column:span 6/span 6}.mx-0\.5{margin-left:.125rem;margin-right:.125rem}.mb-0\.5{margin-bottom:.125rem}.mb-1{margin-bottom:.25rem}.mb-1\.5{margin-bottom:.375rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.ml-auto{margin-left:auto}.mt-0\.5{margin-top:.125rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.hidden{display:none}.h-3{height:.75rem}.h-32{height:8rem}.h-6{height:1.5rem}.max-h-\[88vh\]{max-height:88vh}.min-h-\[34px\]{min-height:34px}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-16{width:4rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-\[130px\]{max-width:130px}.max-w-\[440px\]{max-width:440px}.flex-1{flex:1 1 0%}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;-moz-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.overflow-y-hidden{overflow-y:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-normal{white-space:normal}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.rounded-b-xl{border-bottom-right-radius:.75rem;border-bottom-left-radius:.75rem}.rounded-l-full{border-top-left-radius:9999px;border-bottom-left-radius:9999px}.rounded-r-full{border-top-right-radius:9999px;border-bottom-right-radius:9999px}.rounded-t-xl{border-top-left-radius:.75rem;border-top-right-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-stone-700{--tw-border-opacity:1;border-color:rgb(68 64 60/var(--tw-border-opacity,1))}.border-stone-900{--tw-border-opacity:1;border-color:rgb(28 25 23/var(--tw-border-opacity,1))}.border-stone-900\/10{border-color:rgba(28,25,23,.1)}.border-stone-900\/20{border-color:rgba(28,25,23,.2)}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.bg-\[\#14161a\]{--tw-bg-opacity:1;background-color:rgb(20 22 26/var(--tw-bg-opacity,1))}.bg-\[\#8fa885\]{--tw-bg-opacity:1;background-color:rgb(143 168 133/var(--tw-bg-opacity,1))}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.bg-black\/80{background-color:rgba(0,0,0,.8)}.bg-stone-800\/70{background-color:rgba(41,37,36,.7)}.bg-stone-900{--tw-bg-opacity:1;background-color:rgb(28 25 23/var(--tw-bg-opacity,1))}.bg-stone-900\/10{background-color:rgba(28,25,23,.1)}.bg-stone-900\/15{background-color:rgba(28,25,23,.15)}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-4{padding:1rem}.px-0\.5{padding-left:.125rem;padding-right:.125rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.pb-0\.5{padding-bottom:.125rem}.pb-3{padding-bottom:.75rem}.pr-1{padding-right:.25rem}.pt-0\.5{padding-top:.125rem}.pt-1{padding-top:.25rem}.pt-2{padding-top:.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.align-middle{vertical-align:middle}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.text-\[10\.5px\]{font-size:10.5px}.text-\[10px\]{font-size:10px}.text-\[11\.5px\]{font-size:11.5px}.text-\[11px\]{font-size:11px}.text-\[12\.5px\]{font-size:12.5px}.text-\[12px\]{font-size:12px}.text-\[7\.5px\]{font-size:7.5px}.text-\[8\.5px\]{font-size:8.5px}.text-\[8px\]{font-size:8px}.text-\[9\.5px\]{font-size:9.5px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-.025em}.tracking-tighter{letter-spacing:-.05em}.tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}.tracking-widest{letter-spacing:.1em}.text-\[\#9ab38f\]{--tw-text-opacity:1;color:rgb(154 179 143/var(--tw-text-opacity,1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77/var(--tw-text-opacity,1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.text-amber-400\/90{color:rgba(251,191,36,.9)}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15/var(--tw-text-opacity,1))}.text-stone-100{--tw-text-opacity:1;color:rgb(245 245 244/var(--tw-text-opacity,1))}.text-stone-200{--tw-text-opacity:1;color:rgb(231 229 228/var(--tw-text-opacity,1))}.text-stone-300{--tw-text-opacity:1;color:rgb(214 211 209/var(--tw-text-opacity,1))}.text-stone-400{--tw-text-opacity:1;color:rgb(168 162 158/var(--tw-text-opacity,1))}.text-stone-800{--tw-text-opacity:1;color:rgb(41 37 36/var(--tw-text-opacity,1))}.text-stone-900{--tw-text-opacity:1;color:rgb(28 25 23/var(--tw-text-opacity,1))}.text-stone-950{--tw-text-opacity:1;color:rgb(12 10 9/var(--tw-text-opacity,1))}.text-teal-300{--tw-text-opacity:1;color:rgb(94 234 212/var(--tw-text-opacity,1))}.text-transparent{color:transparent}.opacity-100{opacity:1}.opacity-15{opacity:.15}.opacity-60{opacity:.6}.opacity-75{opacity:.75}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.selection\:bg-amber-500 ::-moz-selection{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.selection\:bg-amber-500 ::selection{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.selection\:text-black ::-moz-selection{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.selection\:text-black ::selection{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.selection\:bg-amber-500::-moz-selection{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.selection\:bg-amber-500::selection{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.selection\:text-black::-moz-selection{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.selection\:text-black::selection{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.hover\:bg-amber-500:hover{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.hover\:text-amber-400:hover{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.hover\:text-rose-400:hover{--tw-text-opacity:1;color:rgb(251 113 133/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:opacity-100:hover{opacity:1}@media (min-width:640px){.sm\:h-36{height:9rem}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:gap-1\.5{gap:.375rem}.sm\:gap-2{gap:.5rem}.sm\:p-6{padding:1.5rem}.sm\:px-3{padding-left:.75rem;padding-right:.75rem}.sm\:text-\[10px\]{font-size:10px}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style>
 </head>
-<body class="bg-stone-950 text-stone-100 min-h-screen flex flex-col items-center justify-center p-1.5 sm:p-4 selection:bg-amber-500 selection:text-black">
+<body class="bg-[#14161a] text-stone-100 min-h-screen flex flex-col items-center selection:bg-amber-500 selection:text-black">
 
-  <!-- Main Calculator Body -->
-  <div class="relative w-full max-w-[430px] bg-[#1e2026] rounded-[36px] p-3.5 sm:p-5 shadow-[0_20px_60px_rgba(0,0,0,0.85)] border-[3px] border-[#e2e8f0]/80 ring-4 ring-[#111317]">
+  <!-- Main Calculator Fullscreen Container -->
+  <div class="relative w-full max-w-[440px] flex flex-col flex-1 px-1.5 sm:px-3">
     
-    <!-- Top Bezel: Title & Solar Panel -->
-    <div class="bg-[#14161a] -mx-1.5 -mt-1.5 px-4 pt-3 pb-3 rounded-t-[28px] border-b border-white/10 mb-2.5">
-      <div class="flex items-center justify-between mb-2.5">
-        <div class="flex flex-col">
-          <span class="text-lg sm:text-xl font-black tracking-widest text-stone-200">SCIENTIFIC</span>
-          <span class="text-[8px] font-bold tracking-wider text-stone-400">関数電卓 · SOLAR</span>
-        </div>
-
-        <!-- Solar Panel (4 cells) -->
-        <div class="solar-panel flex h-7 w-36 sm:w-40 rounded overflow-hidden p-0.5 shadow-inner">
-          <div class="solar-cell flex-1 bg-[#2c1d18]"></div>
-          <div class="solar-cell flex-1 bg-[#31201b]"></div>
-          <div class="solar-cell flex-1 bg-[#2e1e19]"></div>
-          <div class="solar-cell flex-1 bg-[#32211c]"></div>
-        </div>
-      </div>
-
+    <!-- LCD Screen Section -->
+    <div class="w-full mb-1">
       <!-- 96x32 Dot-Matrix LCD Screen -->
       <div id="lcd-container" class="lcd-screen rounded-lg p-2.5 flex flex-col justify-between h-32 sm:h-36 text-stone-950 select-none relative overflow-hidden">
         
@@ -210,7 +199,7 @@
       </div>
 
       <!-- Mode Badge -->
-      <div class="flex justify-between items-center text-[10px] text-stone-300 font-bold px-1 pt-1.5">
+      <div class="flex justify-between items-center text-[10px] text-stone-300 font-bold px-1 pt-1">
         <span id="mode-badge" class="text-[9px] text-amber-400/90 font-mono">MODE 0: 一般 (NORMAL)</span>
       </div>
     </div>
@@ -218,26 +207,26 @@
     <!-- Row 1: HOME, D-Pad, ON/C (Page 88 exact layout) -->
     <div class="grid grid-cols-12 gap-1 mb-1 items-center px-1">
       <div class="col-span-3 flex flex-col items-center">
-        <span class="text-[8px] text-transparent h-2.5">.</span>
-        <button onclick="pressKey('HOME')" class="calc-btn btn-func btn-pill w-full py-1 text-[10px] font-bold tracking-wider">
+        <span class="text-[8.5px] text-transparent h-3">.</span>
+        <button onclick="pressKey('HOME')" class="calc-btn btn-func btn-pill w-full py-1.5 text-[11px] font-black tracking-wider">
           HOME
         </button>
       </div>
 
       <!-- Center 4-way Oval D-Pad -->
       <div class="col-span-6 flex flex-col items-center justify-center">
-        <button onclick="pressKey('UP')" class="calc-btn dpad-key w-16 h-5 rounded-t-xl text-[9px] font-black flex items-center justify-center mb-0.5">▲</button>
+        <button onclick="pressKey('UP')" class="calc-btn dpad-key w-16 h-6 rounded-t-xl text-[11px] font-black flex items-center justify-center mb-0.5">▲</button>
         <div class="flex items-center justify-center gap-3 w-full">
-          <button onclick="pressKey('LEFT')" class="calc-btn dpad-key w-12 h-5 rounded-l-full text-[9px] font-black flex items-center justify-center">◀</button>
-          <button onclick="pressKey('RIGHT')" class="calc-btn dpad-key w-12 h-5 rounded-r-full text-[9px] font-black flex items-center justify-center">▶</button>
+          <button onclick="pressKey('LEFT')" class="calc-btn dpad-key w-12 h-6 rounded-l-full text-[11px] font-black flex items-center justify-center">◀</button>
+          <button onclick="pressKey('RIGHT')" class="calc-btn dpad-key w-12 h-6 rounded-r-full text-[11px] font-black flex items-center justify-center">▶</button>
         </div>
-        <button onclick="pressKey('DOWN')" class="calc-btn dpad-key w-16 h-5 rounded-b-xl text-[9px] font-black flex items-center justify-center mt-0.5">▼</button>
+        <button onclick="pressKey('DOWN')" class="calc-btn dpad-key w-16 h-6 rounded-b-xl text-[11px] font-black flex items-center justify-center mt-0.5">▼</button>
       </div>
 
       <!-- ON/C with OFF above -->
       <div class="col-span-3 flex flex-col items-center">
-        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">OFF</span>
-        <button onclick="pressKey('ON')" class="calc-btn btn-on btn-pill w-full py-1 text-[10px] font-bold tracking-wider">
+        <span class="text-[9px] txt-orange font-bold h-3 leading-none">OFF</span>
+        <button onclick="pressKey('ON')" class="calc-btn btn-on btn-pill w-full py-1.5 text-[11px] font-black tracking-wider">
           ON/C
         </button>
       </div>
@@ -246,15 +235,15 @@
     <!-- Row 2: 2nd F (left) and CA / MODE (right) -->
     <div class="grid grid-cols-6 gap-1.5 mb-1.5 px-1">
       <div class="col-span-1 flex flex-col items-center">
-        <span class="text-[8px] text-transparent h-3 leading-none">.</span>
-        <button onclick="pressKey('2ndF')" class="calc-btn btn-2ndf btn-pill w-full py-1 text-[10px] font-extrabold">
+        <span class="text-[8.5px] text-transparent h-3 leading-none">.</span>
+        <button onclick="pressKey('2ndF')" class="calc-btn btn-2ndf btn-pill w-full py-1.5 text-[11.5px] font-black tracking-wide">
           2nd F
         </button>
       </div>
       <div class="col-span-4"></div>
       <div class="col-span-1 flex flex-col items-center">
-        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">CA</span>
-        <button onclick="pressKey('MODE')" class="calc-btn btn-func btn-pill w-full py-1 text-[10px] font-bold">
+        <span class="text-[9px] txt-orange font-bold h-3 leading-none">CA</span>
+        <button onclick="pressKey('MODE')" class="calc-btn btn-func btn-pill w-full py-1.5 text-[11px] font-black">
           MODE
         </button>
       </div>
@@ -263,38 +252,38 @@
     <!-- Row 3: ALPHA(M-CLR), MATH(SET UP), D1(ALGB), D2(SOLVER), D3, BS(DEL) -->
     <div class="grid grid-cols-6 gap-1.5 mb-2 px-1">
       <div class="flex flex-col items-center">
-        <span class="text-[8px] txt-orange font-bold h-3 leading-none">M-CLR</span>
-        <button onclick="pressKey('ALPHA')" class="calc-btn btn-alpha btn-pill w-full py-1 text-[9.5px] font-extrabold">
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">M-CLR</span>
+        <button onclick="pressKey('ALPHA')" class="calc-btn btn-alpha btn-pill w-full py-1.5 text-[11px] font-black tracking-tight">
           ALPHA
         </button>
       </div>
       <div class="flex flex-col items-center">
-        <span class="text-[8px] txt-orange font-bold h-3 leading-none">SET UP</span>
-        <button onclick="pressKey('MATH')" class="calc-btn btn-func btn-pill w-full py-1 text-[9.5px] font-bold">
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">SET UP</span>
+        <button onclick="pressKey('MATH')" class="calc-btn btn-func btn-pill w-full py-1.5 text-[10.5px] font-bold">
           MATH
         </button>
       </div>
       <div class="flex flex-col items-center">
-        <span class="text-[8px] txt-orange font-bold h-3 leading-none">ALGB</span>
-        <button onclick="pressKey('D1')" class="calc-btn btn-func btn-pill w-full py-1 text-[9.5px] font-bold">
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">ALGB</span>
+        <button onclick="pressKey('D1')" class="calc-btn btn-func btn-pill w-full py-1.5 text-[10.5px] font-bold">
           D1
         </button>
       </div>
       <div class="flex flex-col items-center">
-        <span class="text-[8px] txt-orange font-bold h-3 leading-none">SOLVER</span>
-        <button onclick="pressKey('D2')" class="calc-btn btn-func btn-pill w-full py-1 text-[9.5px] font-bold">
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">SOLVER</span>
+        <button onclick="pressKey('D2')" class="calc-btn btn-func btn-pill w-full py-1.5 text-[10.5px] font-bold">
           D2
         </button>
       </div>
       <div class="flex flex-col items-center">
-        <span class="text-[8px] text-transparent h-3 leading-none">.</span>
-        <button onclick="pressKey('D3')" class="calc-btn btn-func btn-pill w-full py-1 text-[9.5px] font-bold">
+        <span class="text-[8.5px] text-transparent h-3 leading-none">.</span>
+        <button onclick="pressKey('D3')" class="calc-btn btn-func btn-pill w-full py-1.5 text-[10.5px] font-bold">
           D3
         </button>
       </div>
       <div class="flex flex-col items-center">
-        <span class="text-[8px] txt-orange font-bold h-3 leading-none">DEL</span>
-        <button onclick="pressKey('BS')" class="calc-btn btn-func btn-pill w-full py-1 text-[9.5px] font-bold">
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">DEL</span>
+        <button onclick="pressKey('BS')" class="calc-btn btn-func btn-pill w-full py-1.5 text-[10.5px] font-bold">
           BS
         </button>
       </div>
@@ -303,169 +292,169 @@
     <!-- Row 4: hyp, sin, cos, tan, π, D°M'S -->
     <div class="grid grid-cols-6 gap-1 sm:gap-1.5 mb-1.5 px-0.5">
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">arc hyp</span>
           <span class="txt-brown">NOT</span>
         </div>
-        <button onclick="pressKey('hyp')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded">hyp</button>
+        <button onclick="pressKey('hyp')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded">hyp</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">sin⁻¹</span>
           <span class="txt-brown">AND</span>
         </div>
-        <button onclick="pressKey('sin')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded">sin</button>
+        <button onclick="pressKey('sin')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded">sin</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">cos⁻¹</span>
           <span class="txt-brown">OR</span>
         </div>
-        <button onclick="pressKey('cos')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded">cos</button>
+        <button onclick="pressKey('cos')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded">cos</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">tan⁻¹</span>
           <span class="txt-brown">XOR</span>
         </div>
-        <button onclick="pressKey('tan')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded">tan</button>
+        <button onclick="pressKey('tan')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded">tan</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">logₐx</span>
           <span class="txt-brown">XNOR</span>
         </div>
-        <button onclick="pressKey('pi')" class="calc-btn btn-dark w-full py-1.5 text-[11px] font-semibold rounded">π</button>
+        <button onclick="pressKey('pi')" class="calc-btn btn-dark w-full py-2 text-[12.5px] font-bold rounded">π</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-center w-full text-[7px] font-bold h-2.5 leading-none">
+        <div class="flex justify-center w-full text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">↔DEG</span>
         </div>
-        <button onclick="pressKey('dms')" class="calc-btn btn-dark w-full py-1.5 text-[9.5px] font-semibold rounded">D°M'S</button>
+        <button onclick="pressKey('dms')" class="calc-btn btn-dark w-full py-2 text-[10px] font-bold rounded">D°M'S</button>
       </div>
     </div>
 
     <!-- Row 5: y^x, √, x², log, ln, (x,y) -->
     <div class="grid grid-cols-6 gap-1 sm:gap-1.5 mb-1.5 px-0.5">
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">ˣ√</span>
           <span class="txt-cyan">A</span>
         </div>
-        <button onclick="pressKey('power')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded italic">yˣ</button>
+        <button onclick="pressKey('power')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded italic">yˣ</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">³√</span>
           <span class="txt-cyan">B</span>
         </div>
-        <button onclick="pressKey('sqrt')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded">√</button>
+        <button onclick="pressKey('sqrt')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded">√</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">x⁻¹</span>
           <span class="txt-cyan">C</span>
         </div>
-        <button onclick="pressKey('sqr')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded italic">x²</button>
+        <button onclick="pressKey('sqr')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded italic">x²</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">10ˣ</span>
           <span class="txt-cyan">D</span>
         </div>
-        <button onclick="pressKey('log')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded">log</button>
+        <button onclick="pressKey('log')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded">log</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">eˣ</span>
           <span class="txt-cyan">E</span>
         </div>
-        <button onclick="pressKey('ln')" class="calc-btn btn-dark w-full py-1.5 text-[10.5px] font-semibold rounded">ln</button>
+        <button onclick="pressKey('ln')" class="calc-btn btn-dark w-full py-2 text-[12px] font-bold rounded">ln</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">∠</span>
           <span class="txt-cyan">i</span>
           <span class="txt-cyan">F</span>
         </div>
-        <button onclick="pressKey('comma')" class="calc-btn btn-dark w-full py-1.5 text-[9.5px] font-semibold rounded">(x,y)</button>
+        <button onclick="pressKey('comma')" class="calc-btn btn-dark w-full py-2 text-[10px] font-bold rounded">(x,y)</button>
       </div>
     </div>
 
     <!-- Row 6: Exp, a/b, RCL, STO, M+, CHANGE -->
     <div class="grid grid-cols-6 gap-1 sm:gap-1.5 mb-2 px-0.5">
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">P.FACT</span>
           <span class="txt-cyan italic">e</span>
         </div>
-        <button onclick="pressKey('exp')" class="calc-btn btn-dark w-full py-1.5 text-[10px] font-bold rounded italic">Exp</button>
+        <button onclick="pressKey('exp')" class="calc-btn btn-dark w-full py-2 text-[11px] font-bold rounded italic">Exp</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-center w-full text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-center w-full text-[8.5px] font-bold h-3 leading-none">
           <span class="txt-orange">aᵇ/c</span>
         </div>
-        <button onclick="pressKey('frac')" class="calc-btn btn-dark w-full py-1.5 text-[10px] font-bold rounded">a/b</button>
+        <button onclick="pressKey('frac')" class="calc-btn btn-dark w-full py-2 text-[11px] font-bold rounded">a/b</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">x³</span>
           <span class="txt-cyan">X</span>
         </div>
-        <button onclick="pressKey('RCL')" class="calc-btn btn-dark w-full py-1.5 text-[10px] font-bold rounded text-teal-300">RCL</button>
+        <button onclick="pressKey('RCL')" class="calc-btn btn-dark w-full py-2 text-[11px] font-bold rounded text-teal-300">RCL</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">int÷</span>
           <span class="txt-cyan">Y</span>
         </div>
-        <button onclick="pressKey('STO')" class="calc-btn btn-dark w-full py-1.5 text-[10px] font-bold rounded text-teal-300">STO</button>
+        <button onclick="pressKey('STO')" class="calc-btn btn-dark w-full py-2 text-[11px] font-bold rounded text-teal-300">STO</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">M−</span>
           <span class="txt-cyan">M</span>
         </div>
-        <button onclick="pressKey('M+')" class="calc-btn btn-dark w-full py-1.5 text-[10px] font-bold rounded">M+</button>
+        <button onclick="pressKey('M+')" class="calc-btn btn-dark w-full py-2 text-[11px] font-bold rounded">M+</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[6.5px] font-bold h-2.5 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[7.5px] font-bold h-3 leading-none">
           <span class="txt-brown">DATA</span>
           <span class="txt-cyan">INS-D</span>
         </div>
-        <button onclick="pressKey('CHANGE')" class="calc-btn btn-dark w-full py-1.5 text-[8.5px] font-bold rounded tracking-tighter">CHANGE</button>
+        <button onclick="pressKey('CHANGE')" class="calc-btn btn-dark w-full py-2 text-[9.5px] font-black rounded tracking-tight">CHANGE</button>
       </div>
     </div>
 
     <!-- Row 7: 7(RANDOM), 8(→rθ/統計量), 9(→xy/メモリー), ((x'/∫dx), )(y'/d/dx) -->
     <div class="grid grid-cols-5 gap-1.5 sm:gap-2 mb-1.5 px-0.5">
       <div class="flex flex-col items-center">
-        <span class="text-[7.5px] txt-orange font-bold h-3 leading-none">RANDOM</span>
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">RANDOM</span>
         <button onclick="pressKey('7')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">7</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-3 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">→rθ</span>
           <span class="txt-cyan">統計量</span>
         </div>
         <button onclick="pressKey('8')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">8</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-3 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">→xy</span>
           <span class="txt-cyan">メモリー</span>
         </div>
         <button onclick="pressKey('9')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">9</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-3 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange italic">x'</span>
           <span class="txt-cyan">∫dx</span>
         </div>
         <button onclick="pressKey('(')" class="calc-btn btn-func w-full py-2 text-base sm:text-lg font-bold rounded-lg">(</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7.5px] font-bold h-3 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange italic">y'</span>
           <span class="txt-cyan">d/dx</span>
         </div>
@@ -476,34 +465,34 @@
     <!-- Row 8: 4(n!/物理定数), 5(nCr/単位換算), 6(nPr), ×(→HEX/Σ), ÷(→BIN/Π) -->
     <div class="grid grid-cols-5 gap-1.5 sm:gap-2 mb-1.5 px-0.5">
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-3 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange italic">n!</span>
           <span class="txt-cyan">物理定数</span>
         </div>
         <button onclick="pressKey('4')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">4</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-3 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange italic">nCr</span>
           <span class="txt-cyan">単位換算</span>
         </div>
         <button onclick="pressKey('5')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">5</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-start w-full px-1 text-[7.5px] font-bold h-3 leading-none">
+        <div class="flex justify-start w-full px-1 text-[8.5px] font-bold h-3 leading-none">
           <span class="txt-orange italic">nPr</span>
         </div>
         <button onclick="pressKey('6')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">6</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-3 leading-none items-center">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none items-center">
           <span class="bg-brown-badge">→HEX</span>
           <span class="txt-cyan">Σ</span>
         </div>
         <button onclick="pressKey('mul')" class="calc-btn btn-func w-full py-2 text-base sm:text-lg font-bold rounded-lg">×</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-3 leading-none items-center">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none items-center">
           <span class="bg-brown-badge">→BIN</span>
           <span class="txt-cyan">Π</span>
         </div>
@@ -514,33 +503,33 @@
     <!-- Row 9: 1(%/<ENG), 2(GCD/ENG>), 3(LCM), +(→PEN), -(→OCT) -->
     <div class="grid grid-cols-5 gap-1.5 sm:gap-2 mb-1.5 px-0.5">
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-3 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">%</span>
           <span class="txt-cyan">&lt;ENG</span>
         </div>
         <button onclick="pressKey('1')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">1</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-between w-full px-0.5 text-[7px] font-bold h-3 leading-none">
+        <div class="flex justify-between w-full px-0.5 text-[8px] font-bold h-3 leading-none">
           <span class="txt-orange">GCD</span>
           <span class="txt-cyan">ENG&gt;</span>
         </div>
         <button onclick="pressKey('2')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">2</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-start w-full px-1 text-[7.5px] font-bold h-3 leading-none">
+        <div class="flex justify-start w-full px-1 text-[8.5px] font-bold h-3 leading-none">
           <span class="txt-orange">LCM</span>
         </div>
         <button onclick="pressKey('3')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">3</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-center w-full text-[7px] font-bold h-3 leading-none items-center">
+        <div class="flex justify-center w-full text-[8px] font-bold h-3 leading-none items-center">
           <span class="bg-brown-badge">→PEN</span>
         </div>
         <button onclick="pressKey('add')" class="calc-btn btn-func w-full py-2 text-base sm:text-lg font-bold rounded-lg">+</button>
       </div>
       <div class="flex flex-col items-center">
-        <div class="flex justify-center w-full text-[7px] font-bold h-3 leading-none items-center">
+        <div class="flex justify-center w-full text-[8px] font-bold h-3 leading-none items-center">
           <span class="bg-brown-badge">→OCT</span>
         </div>
         <button onclick="pressKey('sub')" class="calc-btn btn-func w-full py-2 text-base sm:text-lg font-bold rounded-lg">−</button>
@@ -550,27 +539,27 @@
     <!-- Row 10: 0(MDF), .(DRG▶), (-)(abs/NEG), =(→DEC/ANS/ENTER) -->
     <div class="grid grid-cols-5 gap-1.5 sm:gap-2 px-0.5">
       <div class="flex flex-col items-center">
-        <span class="text-[7.5px] txt-orange font-bold h-3 leading-none">MDF</span>
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">MDF</span>
         <button onclick="pressKey('0')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">0</button>
       </div>
       <div class="flex flex-col items-center">
-        <span class="text-[7.5px] txt-orange font-bold h-3 leading-none">DRG▶</span>
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">DRG▶</span>
         <button onclick="pressKey('.')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">·</button>
       </div>
       <div class="flex flex-col items-center">
-        <span class="text-[7.5px] txt-orange font-bold h-3 leading-none">abs</span>
-        <button onclick="pressKey('neg')" class="calc-btn btn-dark w-full py-2 text-sm sm:text-base font-bold rounded-lg">(−)</button>
-        <span class="text-[7px] txt-brown font-bold leading-none mt-0.5">└NEG┘</span>
+        <span class="text-[8.5px] txt-orange font-bold h-3 leading-none">abs</span>
+        <button onclick="pressKey('neg')" class="calc-btn btn-dark w-full py-2 text-base sm:text-lg font-bold rounded-lg">(−)</button>
+        <span class="text-[7.5px] txt-brown font-bold leading-none mt-0.5">└NEG┘</span>
       </div>
       <div class="col-span-2 flex flex-col items-center">
-        <div class="flex justify-between w-full px-1 text-[7px] font-bold h-3 leading-none items-center">
+        <div class="flex justify-between w-full px-1 text-[8px] font-bold h-3 leading-none items-center">
           <span class="bg-brown-badge">→DEC</span>
           <span class="txt-cyan">ANS</span>
         </div>
         <button onclick="pressKey('ENTER')" class="calc-btn btn-func w-full py-2 text-base sm:text-lg font-black rounded-lg">
           =
         </button>
-        <span class="text-[7px] text-stone-400 font-bold leading-none mt-0.5">└ENTER┘</span>
+        <span class="text-[7.5px] text-stone-400 font-bold leading-none mt-0.5">└ENTER┘</span>
       </div>
     </div>
 

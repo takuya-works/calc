@@ -1,6 +1,6 @@
 // Service Worker：アプリの全ファイルを端末に保存し、オフラインでも動作させる
 // ※ index.html などを更新したら、下の CACHE_VERSION の数字を上げてください
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v3';
 const CACHE_NAME = `scicalc-${CACHE_VERSION}`;
 
 const ASSETS = [
